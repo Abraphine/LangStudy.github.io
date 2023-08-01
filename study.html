@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Learning Journey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: skyblue;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .input-group {
+            display: inline-block;
+            margin: 10px;
+        }
+        label {
+            display: block;
+        }
+        input {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Language Learning Journey</h1>
+        <div class="input-group">
+            <label for="month">Month:</label>
+            <input id="month" type="number" min="1" max="12" placeholder="Enter the month">
+        </div>
+        <div class="input-group">
+            <label for="week">Week:</label>
+            <input id="week" type="number" min="1" max="52" placeholder="Enter the week">
+        </div>
+        <button onclick="getAdvice()">Get advice</button>
+        <p id="advice"></p>
+    </div>
+
+    <script>
+        function getAdvice() {
+            var month = document.getElementById('month').value;
+            var week = document.getElementById('week').value;
+            var advice = '';
+
+            if(month <= 3){
+                if (week <= 4){
+                    advice = 'Start with the basics...';
+                } else if (week <= 8) {
+                    advice = 'Continue expanding your vocabulary...';
+                } else if (week <= 12) {
+                    advice = 'Practice reading simple Spanish texts...';
+                }
+            } else if (month <= 6) {
+                if (week <= 16) {
+                    advice = 'Learn more complex grammar concepts...';
+                } else if (week <= 20) {
+                    advice = 'Practice listening comprehension...';
+                } else if (week <= 24) {
+                    advice = 'Begin practicing conversation...';
+                }
+            } else if (month <= 9) {
+                if (week <= 28) {
+                    advice = 'Continue practicing conversation...';
+                } else if (week <= 32) {
+                    advice = 'Increase your vocabulary goal...';
+                } else if (week <= 36) {
+                    advice = 'Start writing short essays...';
+                }
+            } else if (month <= 12) {
+                if (week <= 40) {
+                    advice = 'Continue to deepen your understanding...';
+                } else if (week <= 44) {
+                    advice = 'Keep writing in Spanish...';
+                } else if (week <= 48 || week <= 52) {
+                    advice = 'By the last month, you should aim to be engaging...';
+                }
+            }
+
+            document.getElementById('advice').innerText = advice;
+        }
+    </script>
+</body>
+</html>
